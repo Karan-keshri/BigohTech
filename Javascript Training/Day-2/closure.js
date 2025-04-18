@@ -15,7 +15,6 @@ function outerFunction() {
 
 outerFunction(); // Output: "inner  I am an outer variable!"
 
-
 function makeAdder(x) {
     return function(y) {
       return x + y;

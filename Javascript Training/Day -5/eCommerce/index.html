@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive E-Commerce</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">My E-Commerce</div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search products..." />
+      <button id="searchBtn">🔍</button>
+    </div>
+    <div class="icons">
+      <span id="wishlistCount">❤️ (0)</span>
+      <a href="wishlist.html">Wishlist</a>
+      <span id="cartCount">🛒 (0)</span>
+      <a href="cart.html">Cart</a>
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+  <nav>
+    <ul id="categoryList"></ul>
+  </nav>
+
+  <!-- Products Section -->
+  <main>
+    <div id="productsContainer"></div>
+  </main>
+
+  <!-- Pagination Section -->
+  <div id="paginationControls" class="pagination-wrapper">
+    <div>
+      <label for="limitInput">Limit:</label>
+      <select id="limitInput">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+      </select>
+
+      <label for="offsetInput">offset</label>
+      <input type="number" id="offsetInput" value="0" min="0" max="190"/>
+
+      <button id="setPaginationBtn">Set</button>
+    </div>
+
+    <div id="pageButtons">
+      <button id="prevBtn">Previous</button>
+      <span id="pageInfo">Page: 1</span>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <!-- <div id="dynamicPaginationButtons"></div> -->
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 My E-Commerce. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

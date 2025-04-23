@@ -1,4 +1,3 @@
-    //redo
     let count = 0;
 
     function ways(arr,index, currentSum,target) {
@@ -6,6 +5,7 @@
             return;
         }
         if (currentSum === target) count++;
+        console.log(currentSum, target, count);
 
         ways(arr,index + 1, currentSum + arr[index],target);
 

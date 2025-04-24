@@ -59,4 +59,19 @@ function addition1(...nums :number[]) :number{
 console.log(addition1(1,2,3,4,5));
 console.log(addition1(10,20,30));
 
+
+// bad behaviour
+function check({name:string,age:number}) :{name:string,age:number}{
+    return {name:"karan",age:23}
+}
+
+const obj4 :{name:string ,age:number ,id:number}={
+    name:"Karan",
+    age:23,
+    id:123,
+}
+
+console.log(check({name: "abc",age:12}))
+console.log(check(obj4));
+
 export{}

@@ -7,7 +7,7 @@ enum Direction {
     Right="Right"
 }
 
-function getDirection(d:Direction){
+function getDirection(d:Direction):Direction{
     return d;
 }
 

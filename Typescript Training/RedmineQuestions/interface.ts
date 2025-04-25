@@ -22,5 +22,5 @@ export {}
 // --> scope--> clusres, TDZ
 // --> call stack , microtsk quue
 //  --> primitive and reference type
-// --> prottyep
+// --> prottyep prototype method 
 // -->array methds and object mrhotd

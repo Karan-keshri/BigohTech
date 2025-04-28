@@ -1,4 +1,4 @@
-function identity (args :number) :number{
+function identity (args ) :number{
     return args;
 }
 
@@ -59,9 +59,14 @@ function identity2<Type>(arg: Type): Type {
 
   }
 
-  const course : Course = {
+  const course1 : Course = {
     name :"ts",
     subject :" ts sub"
+  }
+
+  const course2 : Course = {
+    name :"js",
+    subject :" js sub"
   }
 
   const quiz :Quiz ={
@@ -72,11 +77,12 @@ function identity2<Type>(arg: Type): Type {
   const sc = new SellCourse<Course>();
   const quizSC=new SellCourse<Quiz>();
 
-  sc.addToCart(course);
+  sc.addToCart(course1);
+  sc.addToCart(course2);
   quizSC.addToCart(quiz);
 
   sc.displayCart();
-  quizSC.displayCart();
+  //quizSC.displayCart();
 
 
 

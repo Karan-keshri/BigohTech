@@ -29,6 +29,10 @@ const taskStatus:StatusType={
 console.log(taskStatus);
 console.log(taskStatus.success);
 
+type CustomPartial <T> ={
+    [K in keyof T] ?: T[K];
+}
+
 // partial
 // Syntax:
 // type Partial<T> = {
@@ -54,10 +58,18 @@ const person2 :Readonly<Person>={
     age :23,
     id :123
 }
+
+type CustomReadonly<T> ={
+    readonly [K in keyof T]  : T[K];
+}
 //person2.name="John";
 
 // Required<Type>
 //Constructs a type consisting of all properties of Type set to required. The opposite of Partial.
+
+type CustomRequired<T> ={
+    [K in keyof T] -?: T[K];
+}
 
 interface Props {
     name ?: string;
@@ -74,6 +86,10 @@ const obj2 : Required<Props>={
 // Constructs a type by picking all properties from Type and
 //  then removing Keys (string literal or union of string literals). The opposite of Pick.
 
+type CustomOmit<T,key extends keyof T>={
+    [K in Exclude<keyof T,key>] : T[K] 
+}
+
 interface Employee {
     Ename:string;
     Eid :number;
@@ -89,6 +105,10 @@ const employee : Omit<Employee,'Esalary'|'Edept'> ={
 // Pick<Type, Keys>
 // Constructs a type by picking the set of properties Keys (string literal or union of string literals) from Type.
 
+type CustomPick<T,key extends keyof T>={
+    [K in key] : T[K];
+}
+
 const employee2 :Pick<Employee,"Ename"|"Eid">={
     Ename : "Alice",
     Eid :123
@@ -96,6 +116,8 @@ const employee2 :Pick<Employee,"Ename"|"Eid">={
 
 // NonNullable<Type>
 // Constructs a type by excluding null and undefined from Type.
+
+type CustomNonNullable<T>  = T extends null | undefined ? never : T;
 
 type NotNull = NonNullable<string | number | undefined | null>;
 let val : NotNull;
@@ -118,6 +140,8 @@ const result: MultiplyFunctionReturnType = multiply(3, 4);
 console.log(result);
 
 // Exclude 
+type CustomExclude<T,U>=T extends U ? never :T;
+
 type Fruits= "apple" | "banana" | "Grapes" | "Mango" ;
 
 let excludedFruits :Exclude<Fruits ,"apple" | "Grapes">;

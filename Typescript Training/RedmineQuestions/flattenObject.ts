@@ -2,9 +2,9 @@ function flattenObject(obj,parentKey='',result={}) {
     for (let key in obj) {
             const newKey = parentKey ? `${parentKey}.${key}` : key;
             if (typeof obj[key] === 'object' ) {
-                flattenObject(obj[key], newKey, result); // Recursively flatten nested objects
+                flattenObject(obj[key], newKey, result); 
             } else {
-                result[newKey] = obj[key]; // Assign the value to the flat key
+                result[newKey] = obj[key]; 
             }
     }
     return result;

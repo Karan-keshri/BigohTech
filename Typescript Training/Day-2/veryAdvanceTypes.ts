@@ -66,7 +66,7 @@ type User = {
   };
   
   type ReadonlyUser = {
-    readonly [P in keyof User]: User[P];
+   readonly [P in keyof User] : User[P];
   };
   
   const user: ReadonlyUser = { id: 1, name: "Alice", email: "alice@example.com" };

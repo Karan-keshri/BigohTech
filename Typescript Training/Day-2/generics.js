@@ -28,9 +28,6 @@ var SellCourse = /** @class */ (function () {
     function SellCourse() {
         this.cart = [];
     }
-    // constructor(cour : T){
-    //     this.product
-    // }
     SellCourse.prototype.addToCart = function (product) {
         this.cart.push(product);
     };
@@ -39,9 +36,13 @@ var SellCourse = /** @class */ (function () {
     };
     return SellCourse;
 }());
-var course = {
+var course1 = {
     name: "ts",
     subject: " ts sub"
+};
+var course2 = {
+    name: "js",
+    subject: " js sub"
 };
 var quiz = {
     name: "Quiz1",
@@ -49,7 +50,8 @@ var quiz = {
 };
 var sc = new SellCourse();
 var quizSC = new SellCourse();
-sc.addToCart(course);
+sc.addToCart(course1);
+sc.addToCart(course2);
 quizSC.addToCart(quiz);
 sc.displayCart();
-quizSC.displayCart();
+//quizSC.displayCart();

@@ -17,6 +17,7 @@ interface Employee {
 
 let empp : person & Employee ={
     name:"abc",
+    empId : 123
 }
 console.log(empp);
 
@@ -54,7 +55,7 @@ type keysOfAnimal=keyof animal; // "name" | "sound"
 function takeKey(keys:keysOfAnimal){
     console.log(keys);
 }
-takeKey('df');
+takeKey('name');
 
 let key : keysOfAnimal;
 key="name";
@@ -71,7 +72,7 @@ function getProperty<obj,k extends keyof obj >(object:obj,key:k): obj[k]{
 
 const dog:animal={name:"Dog",sound:"bark"};
 
-console.log(getProperty(dog,key));
+console.log(getProperty(dog,'name'));
 console.log(getProperty(dog,"sound"));
 
 // typeof
